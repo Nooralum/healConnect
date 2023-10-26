@@ -13,57 +13,58 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              width: MediaQuery.of(context).size.width,
-              height: 240,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(30),
-                  bottomRight: Radius.circular(30),
-                  ),
-                image: DecorationImage(image: AssetImage(
-                  'assets/images/appFont.jpg',
-                ),
-                fit: BoxFit.cover
-                )
-              ),
-              child: Column(
-                children: [
-                  ListTile(
-                    leading: Text('Welcome!!', style: TextStyle(fontSize: 25, color: Colors.white),),
-                    trailing: Icon(Icons.qr_code, color: Colors.black, size: 40,),
-                  ),
-                  Container(
-                    width: 350,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20)
+                width: MediaQuery.of(context).size.width,
+                height: 240,
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(30),
+                      bottomRight: Radius.circular(30),
                     ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        label: Text(
-                          'recherche',
-                          style: TextStyle(
-                            fontStyle: FontStyle.italic,
-                            color: noir,
-                            fontSize: 20
+                    image: DecorationImage(
+                        image: AssetImage(
+                          '/home/obite/Téléchargements/Documents/NanProject/projet_de_sortie_nan/healConnect/assets/images/stethoscope-removebg-preview.png',
+                        ),
+                        fit: BoxFit.cover)),
+                child: Column(
+                  children: [
+                    const ListTile(
+                      leading: Text(
+                        'Welcome!!',
+                        style: TextStyle(fontSize: 25, color: Colors.white),
+                      ),
+                      trailing: Icon(
+                        Icons.qr_code,
+                        color: Colors.black,
+                        size: 40,
+                      ),
+                    ),
+                    Container(
+                      width: 350,
+                      height: 40,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20)),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          label: const Text(
+                            'recherche',
+                            style: TextStyle(
+                                fontStyle: FontStyle.italic,
+                                color: noir,
+                                fontSize: 20),
                           ),
-                          ),
-                          suffixIcon: Icon(
+                          suffixIcon: const Icon(
                             Icons.search,
                             color: noir,
                             size: 30,
-                            ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                         ),
-                        
                       ),
-                    ),
-                  )
-                ],
-              )
-             
-            ),
+                    )
+                  ],
+                )),
           ],
         ),
       ),
