@@ -4,6 +4,7 @@ import 'package:healconnect/monElevatedButton.dart';
 import '../constant.dart';
 import '../monButton_connexion_social.dart';
 import '../monTextField.dart';
+import 'rend_2_vous_page.dart';
 
 class ConnexionPage extends StatefulWidget {
   const ConnexionPage({super.key});
@@ -119,7 +120,11 @@ class _ConnexionPageState extends State<ConnexionPage> {
                 MonElevatedButton(
                     backgroundColor: kColor,
                     text: 'Connexion',
-                    onPressed: () {},
+                    onPressed: () {
+                      MaterialPageRoute route = MaterialPageRoute(
+                          builder: (context) => const RendezVousPage());
+                      Navigator.push(context, route);
+                    },
                     colorText: Colors.white),
                 const SizedBox(
                   height: 70,
