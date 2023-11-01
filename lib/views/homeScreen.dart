@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final double backHeight = 240;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: white,
       body: SafeArea(
         child: Column(
           children: [
