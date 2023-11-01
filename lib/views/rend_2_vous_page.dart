@@ -95,6 +95,7 @@ class _RendezVousPageState extends State<RendezVousPage> {
                 radius: 22,
                 backgroundColor: Colors.white,
                 child: CircleAvatar(
+                  backgroundColor: Colors.transparent,
                   foregroundImage: AssetImage("assets/logos/utilisateur.png"),
                   radius: 20,
                 ),
@@ -120,7 +121,7 @@ class _RendezVousPageState extends State<RendezVousPage> {
                 children: [
                   Text(
                     "Liste des rendez-vous",
-                    style: TextStyle(fontSize: 20, color: kColor),
+                    style: TextStyle(fontSize: 20, color: kBgroundBlue),
                   ),
                 ],
               ),
@@ -136,7 +137,7 @@ class _RendezVousPageState extends State<RendezVousPage> {
                         onTap: () {},
                         child: Container(
                           decoration: BoxDecoration(
-                              color: kColorCardListeRDV,
+                              color: kColor,
                               borderRadius: BorderRadius.circular(20)),
                           width: MediaQuery.of(context).size.width,
                           height: MediaQuery.of(context).size.height / 12,
@@ -175,7 +176,7 @@ class _RendezVousPageState extends State<RendezVousPage> {
                     "Mon calenddrier",
                     style: TextStyle(
                       fontSize: 20,
-                      color: kColor,
+                      color: kBgroundBlue,
                     ),
                   ),
                 ],
@@ -199,7 +200,7 @@ class _RendezVousPageState extends State<RendezVousPage> {
                         color: Colors.white,
                       ),
                       selectedDecoration: BoxDecoration(
-                          shape: BoxShape.rectangle, color: Colors.teal),
+                          shape: BoxShape.rectangle, color: kColor),
                       outsideDaysVisible: false,
                     ),
                     focusedDay: today,
