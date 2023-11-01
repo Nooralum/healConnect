@@ -12,6 +12,7 @@ class NavBarBottom extends StatefulWidget {
 class _NavBarBottomState extends State<NavBarBottom> {
   int _selectedIndex = 0;
 
+//mettre les differentes pages ici
   List tabs = [
     HomeScreen(),
   ];
