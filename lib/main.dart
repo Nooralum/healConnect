@@ -1,5 +1,6 @@
+import 'package:Healconnect/views/bottomNavBar.dart';
 import 'package:flutter/material.dart';
-import 'package:healconnect/views/homeScreen.dart';
+import 'package:Healconnect/views/homeScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,8 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: HomeScreen.id,
+      initialRoute: NavBarBottom.id,
       routes: {
+        NavBarBottom.id:(context)=> NavBarBottom(),
         HomeScreen.id:(context)=> HomeScreen(),
       },
     );
