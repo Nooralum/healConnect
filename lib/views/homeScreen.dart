@@ -10,7 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _selectedIndex = 0;
+   
   @override
   Widget build(BuildContext context) {
     final double backHeight = 240;
@@ -128,52 +128,6 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         
       ),
-      // bottomNavigationBar: Container(
-      //   height: 80,
-      //   margin: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-      //   decoration: BoxDecoration(
-      //     boxShadow: [
-      //       BoxShadow(
-      //         color: Colors.black,
-      //         blurRadius: 20,
-      //       )
-      //     ]
-      //   ),
-      //   child: ClipRRect(
-      //     borderRadius: BorderRadius.circular(30),
-      //     // BorderRadius.only(topLeft: Radius.circular(25), topRight: Radius.circular(25) ),
-      //     child: BottomNavigationBar(
-      //       backgroundColor: Colors.white,
-      //       selectedItemColor: Color.fromARGB(255, 34, 124, 190),
-      //       unselectedItemColor: Colors.black,
-      //       type: BottomNavigationBarType.fixed,
-      //       currentIndex: _selectedIndex,
-      //       onTap: (index){
-      //          setState(() {
-      //            _selectedIndex = index;
-      //          });
-      //       },
-      //       items: const [
-      //         BottomNavigationBarItem(
-      //           icon: Icon(Icons.home,),
-      //           label: 'Accueil',
-      //           ),
-      //         BottomNavigationBarItem(
-      //           icon: Icon(Icons.book_sharp,),
-      //           label: 'Carnet'
-      //           ),
-      //         BottomNavigationBarItem(
-      //           icon: Icon(Icons.calendar_month,),
-      //           label: 'RDV'
-      //           ),
-      //         BottomNavigationBarItem(
-      //           icon: Icon(Icons.account_circle,),
-      //           label: 'Compte'
-      //           ),
-      //       ]
-      //       ),
-      //   ),
-      // ),
     );
   }
 }
