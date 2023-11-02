@@ -208,9 +208,9 @@ class _InscriptionPage2State extends State<InscriptionPage2> {
                     backgroundColor: kColor,
                     text: 'Suivant',
                     onPressed: () {
-                      setState(() {
-                        NavBarBottom();
-                      });
+                      MaterialPageRoute newRoute = MaterialPageRoute(
+                          builder: ((context) => const NavBarBottom()));
+                      Navigator.pushReplacement(context, newRoute);
                     },
                     colorText: Colors.white),
               ],
