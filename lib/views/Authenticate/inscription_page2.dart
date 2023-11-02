@@ -217,7 +217,7 @@ class _InscriptionPage2State extends State<InscriptionPage2> {
                 ),
                 MonElevatedButton(
                     backgroundColor: kColor,
-                    text: 'Suivant',
+                    text: 'Confirmer',
                     onPressed: () {
                       MaterialPageRoute newRoute = MaterialPageRoute(
                           builder: ((context) => const NavBarBottom()));

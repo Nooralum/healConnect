@@ -75,8 +75,8 @@ class _PatientOrDoctorPageState extends State<PatientOrDoctorPage> {
                   "assets/images/sante3.png",
                   height: MediaQuery.of(context).size.width,
                 ),
-                const SizedBox(
-                  height: 10,
+                SizedBox(
+                  height: MediaQuery.of(context).size.width / 40,
                 ),
                 const Text(
                   "Connectez-vouz à votre santé.",
