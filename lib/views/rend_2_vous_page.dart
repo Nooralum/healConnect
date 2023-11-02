@@ -82,9 +82,18 @@ class _RendezVousPageState extends State<RendezVousPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(
-          "Health connect",
-          style: TextStyle(fontWeight: FontWeight.w400, color: Colors.white),
+        title: Column(
+          children: [
+            Image.asset(
+              'assets/images/healthconnectAkadje-removebg-preview.png',
+              height: 25,
+            ),
+            const Text(
+              "Health connect",
+              style:
+                  TextStyle(fontWeight: FontWeight.w400, color: Colors.white),
+            ),
+          ],
         ),
         actions: [
           InkWell(

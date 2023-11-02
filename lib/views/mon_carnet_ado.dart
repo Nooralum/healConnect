@@ -1,4 +1,6 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
 import 'package:healconnect/constant.dart';
 
 import '../model_constante_medicale.dart';
@@ -38,9 +40,18 @@ class _MonCarnetAdoPageState extends State<MonCarnetAdoPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(
-          "Health connect",
-          style: TextStyle(fontWeight: FontWeight.w400, color: Colors.white),
+        title: Column(
+          children: [
+            Image.asset(
+              'assets/images/healthconnectAkadje-removebg-preview.png',
+              height: 25,
+            ),
+            const Text(
+              "Health connect",
+              style:
+                  TextStyle(fontWeight: FontWeight.w400, color: Colors.white),
+            ),
+          ],
         ),
         actions: [
           InkWell(
@@ -80,7 +91,8 @@ class _MonCarnetAdoPageState extends State<MonCarnetAdoPage> {
                     border: Border.all(color: kBgroundBlue, width: 1.1),
                     borderRadius: BorderRadius.circular(15)),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.only(
+                      left: 20.0, right: 20.0, top: 10.0, bottom: 10.0),
                   child: MonCarnetColumn(
                     text1: "Nom",
                     text2: liste[0].nom,
@@ -128,45 +140,39 @@ class _MonCarnetAdoPageState extends State<MonCarnetAdoPage> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Column(
-                                  children: [
-                                    Image.asset(
-                                      'assets/logos/cardio.png',
-                                      color: kBgroundBlue,
-                                      height: 50,
-                                    ),
-                                    Text(
-                                      "${liste2[index].tensionA}/6 TA",
-                                      style:
-                                          const TextStyle(color: Colors.teal),
-                                    )
-                                  ],
+                                ColumnObjetEtText(
+                                  alignment: MainAxisAlignment.center,
+                                  liste2: liste2,
+                                  text1: Image.asset(
+                                    'assets/logos/cardio.png',
+                                    color: kBgroundBlue,
+                                    height: 50,
+                                  ),
+                                  text2: "${liste2[index].tensionA}/6 TA",
+                                  colorsTextAdImage: Colors.teal,
                                 ),
-                                Column(
-                                  children: [
-                                    Image.asset(
-                                      'assets/logos/cardio.png',
-                                      color: kBgroundBlue,
-                                      height: 50,
-                                    ),
-                                    Text(
-                                      "${liste2[index].poids} Kg",
-                                      style:
-                                          const TextStyle(color: Colors.orange),
-                                    )
-                                  ],
+                                ColumnObjetEtText(
+                                  alignment: MainAxisAlignment.center,
+                                  liste2: liste2,
+                                  text1: Image.asset(
+                                    'assets/logos/cardio.png',
+                                    color: kBgroundBlue,
+                                    height: 50,
+                                  ),
+                                  text2: '${liste2[index].poids} Kg',
+                                  colorsTextAdImage: Colors.orange,
                                 ),
-                                Column(
-                                  children: [
-                                    Image.asset(
-                                      'assets/logos/cardio.png',
-                                      color: kBgroundBlue,
-                                      height: 50,
-                                    ),
-                                    Text("${liste2[index].temperature}°C", style:
-                                          const TextStyle(color: Colors.pink))
-                                  ],
-                                )
+                                ColumnObjetEtText(
+                                  liste2: liste2,
+                                  text1: Image.asset(
+                                    'assets/logos/cardio.png',
+                                    color: kBgroundBlue,
+                                    height: 50,
+                                  ),
+                                  text2: '${liste2[index].temperature}°C',
+                                  colorsTextAdImage: Colors.pink,
+                                  alignment: MainAxisAlignment.center,
+                                ),
                               ],
                             ),
                           ),
@@ -179,6 +185,81 @@ class _MonCarnetAdoPageState extends State<MonCarnetAdoPage> {
                       );
                     },
                     itemCount: liste2.length),
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    "Historiques des consultations",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              SizedBox(
+                width: size.width,
+                height: size.height / 3,
+                child: ListView.separated(
+                    itemBuilder: (context, index) {
+                      return Container(
+                        width: size.width,
+                        height: size.height / 10,
+                        decoration: BoxDecoration(
+                            color: const Color.fromARGB(34, 6, 153, 133),
+                            border: Border.all(color: kBgroundBlue, width: 1.5),
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Row(
+                            children: [
+                              const CircleAvatar(
+                                radius: 30,
+                                backgroundColor: kColor,
+                              ),
+                              const SizedBox(
+                                width: 10.0,
+                              ),
+                              ColumnObjetEtText(
+                                liste2: liste2,
+                                text1: const Text(
+                                  "Dr KOUAKOU Marcel",
+                                  style: TextStyle(
+                                      color: kBgroundBlue,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15),
+                                ),
+                                colorsTextAdImage: kBgroundBlue,
+                                text2: 'REF N°12535',
+                                alignment: MainAxisAlignment.spaceBetween,
+                              ),
+                              const Spacer(),
+                              ColumnObjetEtText(
+                                liste2: liste2,
+                                text1: const Text(
+                                  "09/10/2023",
+                                  style: TextStyle(
+                                      color: kBgroundBlue, fontSize: 15),
+                                ),
+                                colorsTextAdImage: kBgroundBlue,
+                                text2: '10h15',
+                                alignment: MainAxisAlignment.spaceBetween,
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                    separatorBuilder: (context, index) {
+                      return const SizedBox(
+                        height: 10.0,
+                      );
+                    },
+                    itemCount: liste2.length + 2),
               )
             ],
           ),
@@ -187,6 +268,44 @@ class _MonCarnetAdoPageState extends State<MonCarnetAdoPage> {
     );
   }
 }
+
+class ColumnObjetEtText extends StatelessWidget {
+  const ColumnObjetEtText({
+    Key? key,
+    required this.text1,
+    required this.text2,
+    required this.liste2,
+    required this.colorsTextAdImage,
+    required this.alignment,
+  }) : super(key: key);
+  final Widget text1;
+  final String text2;
+  final Color colorsTextAdImage;
+  final MainAxisAlignment alignment;
+
+  final List<ConstantesMedicales> liste2;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: alignment,
+      children: [
+        text1,
+        Text(
+          text2,
+          style: TextStyle(color: colorsTextAdImage),
+        )
+      ],
+    );
+  }
+}
+
+/*  Image.asset(
+          'assets/logos/cardio.png',
+          color: kBgroundBlue,
+          height: 50,
+          "${liste2[index].tensionA}/6 TA"
+        ), */
 
 class MonCarnetColumn extends StatelessWidget {
   const MonCarnetColumn({
