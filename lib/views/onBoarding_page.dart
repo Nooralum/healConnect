@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constant.dart';
 import '../monElevatedButton.dart';
-import 'connexion_patient_docteur.dart';
+import 'Authenticate/connexion_patient_docteur.dart';
 
 class OnBoarding extends StatefulWidget {
   static const String id = 'OnBording';

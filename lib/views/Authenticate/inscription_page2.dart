@@ -1,10 +1,10 @@
 import 'package:Healconnect/views/bottomNavBar.dart';
 import 'package:flutter/material.dart';
 
-import '../constant.dart';
+import '../../constant.dart';
 
-import '../monElevatedButton.dart';
-import '../monTextField.dart';
+import '../../monElevatedButton.dart';
+import '../../monTextField.dart';
 
 class InscriptionPage2 extends StatefulWidget {
   const InscriptionPage2({super.key});

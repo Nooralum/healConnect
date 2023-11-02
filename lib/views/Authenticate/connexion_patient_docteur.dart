@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../constant.dart';
-import '../monElevatedButton.dart';
+import '../../constant.dart';
+import '../../monElevatedButton.dart';
 import 'connexion_page.dart';
 import 'inscription_page1.dart';
 

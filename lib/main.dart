@@ -1,6 +1,6 @@
 import 'package:Healconnect/views/bottomNavBar.dart';
 import 'package:flutter/material.dart';
-import 'package:Healconnect/views/homeScreen.dart';
+import 'package:Healconnect/views/PatientPage/homeScreen.dart';
 
 import 'views/onBoarding_page.dart';
 
