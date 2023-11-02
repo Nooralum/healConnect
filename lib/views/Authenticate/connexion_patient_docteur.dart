@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../controllers/constant.dart';
 import '../../controllers/monElevatedButton.dart';
@@ -33,7 +34,7 @@ class _PatientOrDoctorPageState extends State<PatientOrDoctorPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
+                     const Text(
                       "Heal",
                       style: TextStyle(
                           fontSize: 40,
@@ -75,11 +76,8 @@ class _PatientOrDoctorPageState extends State<PatientOrDoctorPage> {
                   "assets/images/sante3.png",
                   height: MediaQuery.of(context).size.width,
                 ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.width / 40,
-                ),
                 const Text(
-                  "Connectez-vouz à votre santé.",
+                  "Connectez-vous à votre santé.",
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
               ],
@@ -104,10 +102,10 @@ class _PatientOrDoctorPageState extends State<PatientOrDoctorPage> {
                             builder: ((context) => const InscriptionPage1()));
                         Navigator.push(context, route);
                       },
-                      colorText: Colors.white,
+                      colorText: white,
                     ),
                     const SizedBox(
-                      width: 50,
+                      width: 20,
                     ),
                     MonElevatedButton(
                       backgroundColor: kColor,
@@ -117,7 +115,7 @@ class _PatientOrDoctorPageState extends State<PatientOrDoctorPage> {
                             builder: ((context) => const ConnexionPage()));
                         Navigator.push(context, route);
                       },
-                      colorText: Colors.white,
+                      colorText: white,
                     ),
                   ],
                 ),

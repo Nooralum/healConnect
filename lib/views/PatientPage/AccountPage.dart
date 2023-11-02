@@ -1,5 +1,7 @@
-import 'package:Healconnect/constant.dart';
 import 'package:flutter/material.dart';
+
+import '../../controllers/constant.dart';
+import '../../controllers/monDrawer.dart';
 
 class AccountPage extends StatefulWidget {
   static const String id = '';
@@ -72,11 +74,14 @@ class _AccountPageState extends State<AccountPage> {
           ],
         ),
       ),
+      drawer: monDrawer(),
 
 
     );
   }
 }
+
+
 
 class accountContainer extends StatelessWidget {
   const accountContainer({

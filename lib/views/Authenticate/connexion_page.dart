@@ -127,7 +127,8 @@ class _ConnexionPageState extends State<ConnexionPage> {
                     },
                     colorText: Colors.white),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height / 12,
+                  height: 10,
+                  // height: MediaQuery.of(context).size.height / 12,
                 ),
                 const Text(
                   "Ou",
