@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../constant.dart';
-import '../monElevatedButton.dart';
+import '../controllers/constant.dart';
+import '../controllers/monElevatedButton.dart';
 import 'Authenticate/connexion_patient_docteur.dart';
 
 class OnBoarding extends StatefulWidget {

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../constant.dart';
-import '../../monButton_connexion_social.dart';
-import '../../monElevatedButton.dart';
-import '../../monTextField.dart';
+import '../../controllers/constant.dart';
+import '../../controllers/monButton_connexion_social.dart';
+import '../../controllers/monElevatedButton.dart';
+import '../../controllers/monTextField.dart';
 import 'inscription_page2.dart';
 
 class InscriptionPage1 extends StatefulWidget {

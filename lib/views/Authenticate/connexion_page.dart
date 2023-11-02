@@ -1,10 +1,10 @@
 import 'package:Healconnect/views/bottomNavBar.dart';
 import 'package:flutter/material.dart';
 
-import '../../constant.dart';
-import '../../monButton_connexion_social.dart';
-import '../../monElevatedButton.dart';
-import '../../monTextField.dart';
+import '../../controllers/constant.dart';
+import '../../controllers/monButton_connexion_social.dart';
+import '../../controllers/monElevatedButton.dart';
+import '../../controllers/monTextField.dart';
 
 class ConnexionPage extends StatefulWidget {
   const ConnexionPage({super.key});

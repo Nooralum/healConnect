@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Healconnect/constant.dart';
+import 'package:Healconnect/controllers/constant.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = 'home';
