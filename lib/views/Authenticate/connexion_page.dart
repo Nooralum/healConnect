@@ -70,7 +70,7 @@ class _ConnexionPageState extends State<ConnexionPage> {
               children: [
                 Image.asset(
                   'assets/images/connexionSante.jpg',
-                  height: 200,
+                  height: MediaQuery.of(context).size.width / 2,
                 ),
                 MonTextField(
                   controller: controllerEmail,
@@ -114,20 +114,20 @@ class _ConnexionPageState extends State<ConnexionPage> {
                   ),
                   obobscureText: mot2PasseCachet,
                 ),
-                const SizedBox(
-                  height: 30,
+                SizedBox(
+                  height: MediaQuery.of(context).size.width / 20,
                 ),
                 MonElevatedButton(
                     backgroundColor: kColor,
                     text: 'Connexion',
                     onPressed: () {
-                      setState(() {
-                        NavBarBottom();
-                      });
+                      MaterialPageRoute newRoute = MaterialPageRoute(
+                          builder: (context) => const NavBarBottom());
+                      Navigator.pushReplacement(context, newRoute);
                     },
                     colorText: Colors.white),
-                const SizedBox(
-                  height: 70,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 12,
                 ),
                 const Text(
                   "Ou",
@@ -145,9 +145,7 @@ class _ConnexionPageState extends State<ConnexionPage> {
                   text: 'Facebook',
                   imagePath: 'assets/logos/facebook-logo.png',
                   backgroundColor: kBgroundBlue,
-                  onTap: () {
-                    
-                  },
+                  onTap: () {},
                   textColor: Colors.white,
                   colorBorder: kBgroundBlue,
                 ),
