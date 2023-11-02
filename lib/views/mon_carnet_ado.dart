@@ -1,9 +1,12 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
+import '../controllers/carnetColumn2.dart';
+import '../controllers/columnObjetText.dart';
 import '../controllers/constant.dart';
 import '../models/model_constante_medicale.dart';
 import '../models/model_personne.dart';
+import 'description_consultation.dart';
 
 class MonCarnetAdoPage extends StatefulWidget {
   const MonCarnetAdoPage({super.key});
@@ -37,8 +40,8 @@ class _MonCarnetAdoPageState extends State<MonCarnetAdoPage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      /* appBar: AppBar(
-        centerTitle: true,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Column(
           children: [
             Image.asset(
@@ -74,7 +77,7 @@ class _MonCarnetAdoPageState extends State<MonCarnetAdoPage> {
           fit: BoxFit.cover,
         ),
         backgroundColor: Colors.transparent,
-      ), */
+      ),
       body: SizedBox(
         height: size.height,
         width: size.width,
@@ -82,9 +85,6 @@ class _MonCarnetAdoPageState extends State<MonCarnetAdoPage> {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 15,
-              ),
               Container(
                 width: size.width - 90,
                 height: size.height / 7,
@@ -204,56 +204,70 @@ class _MonCarnetAdoPageState extends State<MonCarnetAdoPage> {
                 height: MediaQuery.of(context).size.height / 70,
               ),
               Expanded(
-                child: Container(
+                child: SizedBox(
                   width: size.width,
                   child: ListView.separated(
                       itemBuilder: (context, index) {
-                        return Container(
-                          width: size.width,
-                          height: size.height / 10,
-                          decoration: BoxDecoration(
-                              color: const Color.fromARGB(34, 6, 153, 133),
-                              border:
-                                  Border.all(color: kBgroundBlue, width: 1.5),
-                              borderRadius: BorderRadius.circular(10)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Row(
-                              children: [
-                                const CircleAvatar(
-                                  radius: 30,
-                                  backgroundImage: AssetImage(
-                                      'assets/images/healconnectAkadje-removebg-preview.png'),
-                                ),
-                                const SizedBox(
-                                  width: 10.0,
-                                ),
-                                ColumnObjetEtText(
-                                  liste2: liste2,
-                                  text1: const Text(
-                                    "Dr KOUAKOU Marcel",
-                                    style: TextStyle(
-                                        color: kBgroundBlue,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 15),
+                        return InkWell(
+                          onTap: () {
+                            MaterialPageRoute route = MaterialPageRoute(
+                                builder: (context) =>
+                                    const DescriptionConsultaionPage(
+                                      ref: 'REF N°12535',
+                                      tensionA: '',
+                                      poids: '',
+                                      temperature: '',
+                                      age: '',
+                                    ));
+                            Navigator.push(context, route);
+                          },
+                          child: Container(
+                            width: size.width,
+                            height: size.height / 10,
+                            decoration: BoxDecoration(
+                                color: const Color.fromARGB(34, 6, 153, 133),
+                                border:
+                                    Border.all(color: kBgroundBlue, width: 1.5),
+                                borderRadius: BorderRadius.circular(10)),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Row(
+                                children: [
+                                  const CircleAvatar(
+                                    radius: 30,
+                                    backgroundImage: AssetImage(
+                                        'assets/images/healconnectAkadje-removebg-preview.png'),
                                   ),
-                                  colorsTextAdImage: kBgroundBlue,
-                                  text2: 'REF N°12535',
-                                  alignment: MainAxisAlignment.spaceBetween,
-                                ),
-                                const Spacer(),
-                                ColumnObjetEtText(
-                                  liste2: liste2,
-                                  text1: const Text(
-                                    "09/10/2023",
-                                    style: TextStyle(
-                                        color: kBgroundBlue, fontSize: 15),
+                                  const SizedBox(
+                                    width: 10.0,
                                   ),
-                                  colorsTextAdImage: kBgroundBlue,
-                                  text2: '10h15',
-                                  alignment: MainAxisAlignment.spaceBetween,
-                                ),
-                              ],
+                                  ColumnObjetEtText(
+                                    liste2: liste2,
+                                    text1: const Text(
+                                      "Dr KOUAKOU Marcel",
+                                      style: TextStyle(
+                                          color: kBgroundBlue,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15),
+                                    ),
+                                    colorsTextAdImage: kBgroundBlue,
+                                    text2: 'REF N°12535',
+                                    alignment: MainAxisAlignment.spaceBetween,
+                                  ),
+                                  const Spacer(),
+                                  ColumnObjetEtText(
+                                    liste2: liste2,
+                                    text1: const Text(
+                                      "09/10/2023",
+                                      style: TextStyle(
+                                          color: kBgroundBlue, fontSize: 15),
+                                    ),
+                                    colorsTextAdImage: kBgroundBlue,
+                                    text2: '10h15',
+                                    alignment: MainAxisAlignment.spaceBetween,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         );
@@ -270,37 +284,6 @@ class _MonCarnetAdoPageState extends State<MonCarnetAdoPage> {
           ),
         ),
       ),
-    );
-  }
-}
-
-class ColumnObjetEtText extends StatelessWidget {
-  const ColumnObjetEtText({
-    Key? key,
-    required this.text1,
-    required this.text2,
-    required this.liste2,
-    required this.colorsTextAdImage,
-    required this.alignment,
-  }) : super(key: key);
-  final Widget text1;
-  final String text2;
-  final Color colorsTextAdImage;
-  final MainAxisAlignment alignment;
-
-  final List<ConstantesMedicales> liste2;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: alignment,
-      children: [
-        text1,
-        Text(
-          text2,
-          style: TextStyle(color: colorsTextAdImage),
-        )
-      ],
     );
   }
 }
@@ -355,34 +338,6 @@ class MonCarnetColumn extends StatelessWidget {
             CarnetColumn2(text1: text111, text2: text222),
             CarnetColumn2(text1: text11111, text2: text22222)
           ],
-        )
-      ],
-    );
-  }
-}
-
-class CarnetColumn2 extends StatelessWidget {
-  const CarnetColumn2({
-    super.key,
-    required this.text1,
-    required this.text2,
-  });
-
-  final String text1;
-  final String text2;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          text1,
-          style: const TextStyle(fontSize: 15.0),
-        ),
-        Text(
-          text2,
-          style: const TextStyle(
-              color: kBgroundBlue, fontWeight: FontWeight.bold, fontSize: 15.0),
         )
       ],
     );

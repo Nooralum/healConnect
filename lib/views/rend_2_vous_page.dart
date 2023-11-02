@@ -80,8 +80,8 @@ class _RendezVousPageState extends State<RendezVousPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /* appBar: AppBar(
-        centerTitle: true,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Column(
           children: [
             Image.asset(
@@ -117,7 +117,7 @@ class _RendezVousPageState extends State<RendezVousPage> {
           fit: BoxFit.cover,
         ),
         backgroundColor: Colors.transparent,
-      ), */
+      ),
       body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
@@ -125,9 +125,6 @@ class _RendezVousPageState extends State<RendezVousPage> {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 10,
-              ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
