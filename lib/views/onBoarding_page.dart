@@ -60,9 +60,12 @@ class _OnBoardingState extends State<OnBoarding> {
                           image: AssetImage("assets/images/sante1.png"),
                           fit: BoxFit.cover)),
                 ),
-                const Text(
-                  "Gagnez du temps et evitez les déplacements unitiles en utilisant notre application de consultation medicale.",
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                const Padding(
+                  padding: EdgeInsets.only(left: 12.0),
+                  child: Text(
+                    "Gagnez du temps et evitez les déplacements unitiles en utilisant notre application de consultation medicale.",
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  ),
                 ),
                 MonElevatedButton(
                   backgroundColor: kColor,
