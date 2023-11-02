@@ -1,3 +1,4 @@
+import 'package:Healconnect/views/PatientPage/AccountPage.dart';
 import 'package:Healconnect/views/bottomNavBar.dart';
 import 'package:flutter/material.dart';
 import 'package:Healconnect/views/PatientPage/homeScreen.dart';
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: OnBoarding.id,
       routes: {
+        AccountPage.id: (context) => const AccountPage(),
         OnBoarding.id: (context) => const OnBoarding(),
         NavBarBottom.id: (context) => const NavBarBottom(),
         HomeScreen.id: (context) => const HomeScreen(),

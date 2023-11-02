@@ -1,3 +1,4 @@
+import 'package:Healconnect/views/PatientPage/AccountPage.dart';
 import 'package:Healconnect/views/PatientPage/homeScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,9 @@ class _NavBarBottomState extends State<NavBarBottom> {
 //mettre les differentes pages ici
   List tabs = [
     HomeScreen(),
+    HomeScreen(),
+    HomeScreen(),
+    AccountPage(),
   ];
 
   @override
