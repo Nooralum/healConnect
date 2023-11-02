@@ -105,7 +105,8 @@ class _RendezVousPageState extends State<RendezVousPage> {
                 backgroundColor: Colors.white,
                 child: CircleAvatar(
                   backgroundColor: Colors.transparent,
-                  foregroundImage: AssetImage("assets/logos/utilisateur.png"),
+                  foregroundImage:
+                      AssetImage("assets/images/ppHealConnect.jpg"),
                   radius: 20,
                 ),
               ),

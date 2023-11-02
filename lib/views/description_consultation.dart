@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../controllers/carnetColumn2.dart';
-
 import '../controllers/constant.dart';
 
 class DescriptionConsultaionPage extends StatefulWidget {
