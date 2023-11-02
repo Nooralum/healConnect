@@ -1,4 +1,4 @@
-import 'package:Healconnect/views/homeScreen.dart';
+import 'package:Healconnect/views/PatientPage/homeScreen.dart';
 import 'package:flutter/material.dart';
 
 class NavBarBottom extends StatefulWidget {
