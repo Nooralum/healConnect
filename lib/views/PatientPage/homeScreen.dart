@@ -1,3 +1,4 @@
+import 'package:Healconnect/views/PatientPage/QrCode.dart';
 import 'package:flutter/material.dart';
 import 'package:Healconnect/controllers/constant.dart';
 
@@ -16,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final double backHeight = 240;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: white,
       body: SafeArea(
         child: Column(
           children: [
@@ -40,9 +41,14 @@ class _HomeScreenState extends State<HomeScreen> {
                      ),
                child: Column(
                     children: [
-                       const ListTile(
+                        ListTile(
                            leading: Text('Welcome!!', style: TextStyle(fontSize: 25, color: Colors.white),),
-                           trailing: Icon(Icons.qr_code, color: Colors.black, size: 40,),
+                           trailing: IconButton(
+                            onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=> QrCodePage()));
+                            },
+                            icon:Icon(Icons.qr_code, color: Colors.black, size: 40,)
+                            ),
                         ),
                       const SizedBox(height: 20,),
                         Container(

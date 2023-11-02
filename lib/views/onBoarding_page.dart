@@ -26,13 +26,14 @@ class _OnBoardingState extends State<OnBoarding> {
         child: Stack(children: [
           Column(children: [
             const Padding(
-              padding: EdgeInsets.only(top: 70.0, right: 180.0),
+              padding: EdgeInsets.only(top: 70.0,),
               child: Text(
-                "Bienvenue !",
+                "Bienvenue Sur HealConnect !",
+                textAlign: TextAlign.center,
                 style: TextStyle(
-                    fontSize: 40,
+                    fontSize: 35,
                     fontWeight: FontWeight.w400,
-                    color: Colors.white),
+                    color: white),
               ),
             ),
             const Spacer(),
@@ -60,8 +61,9 @@ class _OnBoardingState extends State<OnBoarding> {
                           image: AssetImage("assets/images/sante1.png"),
                           fit: BoxFit.cover)),
                 ),
-                const Text(
-                  "Gagnez du temps et evitez les déplacements unitiles en utilisant notre application de consultation medicale.",
+                 Text(
+                  "Gagnez du temps et évitez les déplacements unitiles en utilisant notre application de consultation medicale.",
+                
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
                 MonElevatedButton(
