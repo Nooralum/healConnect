@@ -1,5 +1,6 @@
+import 'package:Healconnect/views/bottomNavBar.dart';
 import 'package:flutter/material.dart';
-import 'package:healconnect/views/homeScreen.dart';
+import 'package:Healconnect/views/PatientPage/homeScreen.dart';
 
 import 'views/onBoarding_page.dart';
 
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       initialRoute: OnBoarding.id,
       routes: {
         OnBoarding.id: (context) => const OnBoarding(),
+        NavBarBottom.id: (context) => const NavBarBottom(),
         HomeScreen.id: (context) => const HomeScreen(),
       },
     );

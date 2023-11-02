@@ -1,10 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-import 'package:healconnect/constant.dart';
-
-import '../model_constante_medicale.dart';
-import '../model_personne.dart';
+import '../controllers/constant.dart';
+import '../models/model_constante_medicale.dart';
+import '../models/model_personne.dart';
 
 class MonCarnetAdoPage extends StatefulWidget {
   const MonCarnetAdoPage({super.key});
@@ -38,7 +37,7 @@ class _MonCarnetAdoPageState extends State<MonCarnetAdoPage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
+      /* appBar: AppBar(
         centerTitle: true,
         title: Column(
           children: [
@@ -75,7 +74,7 @@ class _MonCarnetAdoPageState extends State<MonCarnetAdoPage> {
           fit: BoxFit.cover,
         ),
         backgroundColor: Colors.transparent,
-      ),
+      ), */
       body: SizedBox(
         height: size.height,
         width: size.width,
@@ -83,6 +82,9 @@ class _MonCarnetAdoPageState extends State<MonCarnetAdoPage> {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 15,
+              ),
               Container(
                 width: size.width - 90,
                 height: size.height / 7,
@@ -105,8 +107,8 @@ class _MonCarnetAdoPageState extends State<MonCarnetAdoPage> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20.0,
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 30,
               ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -117,8 +119,8 @@ class _MonCarnetAdoPageState extends State<MonCarnetAdoPage> {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 10.0,
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 70,
               ),
               SizedBox(
                 width: size.width,
@@ -186,8 +188,8 @@ class _MonCarnetAdoPageState extends State<MonCarnetAdoPage> {
                     },
                     itemCount: liste2.length),
               ),
-              const SizedBox(
-                height: 20.0,
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 30,
               ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -198,68 +200,71 @@ class _MonCarnetAdoPageState extends State<MonCarnetAdoPage> {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 10.0,
-              ),
               SizedBox(
-                width: size.width,
-                height: size.height / 3,
-                child: ListView.separated(
-                    itemBuilder: (context, index) {
-                      return Container(
-                        width: size.width,
-                        height: size.height / 10,
-                        decoration: BoxDecoration(
-                            color: const Color.fromARGB(34, 6, 153, 133),
-                            border: Border.all(color: kBgroundBlue, width: 1.5),
-                            borderRadius: BorderRadius.circular(20)),
-                        child: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Row(
-                            children: [
-                              const CircleAvatar(
-                                radius: 30,
-                                backgroundColor: kColor,
-                              ),
-                              const SizedBox(
-                                width: 10.0,
-                              ),
-                              ColumnObjetEtText(
-                                liste2: liste2,
-                                text1: const Text(
-                                  "Dr KOUAKOU Marcel",
-                                  style: TextStyle(
-                                      color: kBgroundBlue,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15),
+                height: MediaQuery.of(context).size.height / 70,
+              ),
+              Expanded(
+                child: Container(
+                  width: size.width,
+                  child: ListView.separated(
+                      itemBuilder: (context, index) {
+                        return Container(
+                          width: size.width,
+                          height: size.height / 10,
+                          decoration: BoxDecoration(
+                              color: const Color.fromARGB(34, 6, 153, 133),
+                              border:
+                                  Border.all(color: kBgroundBlue, width: 1.5),
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Row(
+                              children: [
+                                const CircleAvatar(
+                                  radius: 30,
+                                  backgroundImage: AssetImage(
+                                      'assets/images/healconnectAkadje-removebg-preview.png'),
                                 ),
-                                colorsTextAdImage: kBgroundBlue,
-                                text2: 'REF N°12535',
-                                alignment: MainAxisAlignment.spaceBetween,
-                              ),
-                              const Spacer(),
-                              ColumnObjetEtText(
-                                liste2: liste2,
-                                text1: const Text(
-                                  "09/10/2023",
-                                  style: TextStyle(
-                                      color: kBgroundBlue, fontSize: 15),
+                                const SizedBox(
+                                  width: 10.0,
                                 ),
-                                colorsTextAdImage: kBgroundBlue,
-                                text2: '10h15',
-                                alignment: MainAxisAlignment.spaceBetween,
-                              ),
-                            ],
+                                ColumnObjetEtText(
+                                  liste2: liste2,
+                                  text1: const Text(
+                                    "Dr KOUAKOU Marcel",
+                                    style: TextStyle(
+                                        color: kBgroundBlue,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  ),
+                                  colorsTextAdImage: kBgroundBlue,
+                                  text2: 'REF N°12535',
+                                  alignment: MainAxisAlignment.spaceBetween,
+                                ),
+                                const Spacer(),
+                                ColumnObjetEtText(
+                                  liste2: liste2,
+                                  text1: const Text(
+                                    "09/10/2023",
+                                    style: TextStyle(
+                                        color: kBgroundBlue, fontSize: 15),
+                                  ),
+                                  colorsTextAdImage: kBgroundBlue,
+                                  text2: '10h15',
+                                  alignment: MainAxisAlignment.spaceBetween,
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                      );
-                    },
-                    separatorBuilder: (context, index) {
-                      return const SizedBox(
-                        height: 10.0,
-                      );
-                    },
-                    itemCount: liste2.length + 2),
+                        );
+                      },
+                      separatorBuilder: (context, index) {
+                        return const SizedBox(
+                          height: 10.0,
+                        );
+                      },
+                      itemCount: 8),
+                ),
               )
             ],
           ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:healconnect/constant.dart';
 
-import '../monElevatedButton.dart';
-import 'connexion_patient_docteur.dart';
+import '../controllers/constant.dart';
+import '../controllers/monElevatedButton.dart';
+import 'Authenticate/connexion_patient_docteur.dart';
 
 class OnBoarding extends StatefulWidget {
   static const String id = 'OnBording';

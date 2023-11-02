@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-import '../constant.dart';
-import '../model_rendez_vous.dart';
+import '../controllers/constant.dart';
+import '../models/model_rendez_vous.dart';
 
 class RendezVousPage extends StatefulWidget {
   const RendezVousPage({super.key});
@@ -80,7 +80,7 @@ class _RendezVousPageState extends State<RendezVousPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      /* appBar: AppBar(
         centerTitle: true,
         title: Column(
           children: [
@@ -117,7 +117,7 @@ class _RendezVousPageState extends State<RendezVousPage> {
           fit: BoxFit.cover,
         ),
         backgroundColor: Colors.transparent,
-      ),
+      ), */
       body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
@@ -125,6 +125,9 @@ class _RendezVousPageState extends State<RendezVousPage> {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 10,
+              ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -190,32 +193,30 @@ class _RendezVousPageState extends State<RendezVousPage> {
                   ),
                 ],
               ),
-              SizedBox(
-                  height: MediaQuery.of(context).size.height / 2.7,
-                  width: MediaQuery.of(context).size.height,
+              Expanded(
                   child: TableCalendar(
-                    locale: 'en_US',
-                    rowHeight: 40,
-                    headerStyle: const HeaderStyle(
-                      formatButtonVisible: false,
-                      titleCentered: true,
-                    ),
-                    availableGestures: AvailableGestures.all,
-                    selectedDayPredicate: (day) => isSameDay(day, today),
-                    onDaySelected: _onDaySelected,
-                    startingDayOfWeek: StartingDayOfWeek.monday,
-                    calendarStyle: const CalendarStyle(
-                      todayTextStyle: TextStyle(
-                        color: Colors.white,
-                      ),
-                      selectedDecoration: BoxDecoration(
-                          shape: BoxShape.rectangle, color: kColor),
-                      outsideDaysVisible: false,
-                    ),
-                    focusedDay: today,
-                    firstDay: DateTime.utc(2017, 12, 10),
-                    lastDay: DateTime.utc(2030, 11, 20),
-                  )),
+                locale: 'en_US',
+                rowHeight: MediaQuery.of(context).size.width / 12,
+                headerStyle: const HeaderStyle(
+                  formatButtonVisible: false,
+                  titleCentered: true,
+                ),
+                availableGestures: AvailableGestures.all,
+                selectedDayPredicate: (day) => isSameDay(day, today),
+                onDaySelected: _onDaySelected,
+                startingDayOfWeek: StartingDayOfWeek.monday,
+                calendarStyle: const CalendarStyle(
+                  todayTextStyle: TextStyle(
+                    color: Colors.white,
+                  ),
+                  selectedDecoration:
+                      BoxDecoration(shape: BoxShape.rectangle, color: kColor),
+                  outsideDaysVisible: false,
+                ),
+                focusedDay: today,
+                firstDay: DateTime.utc(2017, 12, 10),
+                lastDay: DateTime.utc(2030, 11, 20),
+              )),
             ],
           ),
         ),
