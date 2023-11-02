@@ -1,10 +1,10 @@
 import 'package:Healconnect/views/bottomNavBar.dart';
 import 'package:flutter/material.dart';
 
-import '../../constant.dart';
+import '../../controllers/constant.dart';
 
-import '../../monElevatedButton.dart';
-import '../../monTextField.dart';
+import '../../controllers/monElevatedButton.dart';
+import '../../controllers/monTextField.dart';
 
 class InscriptionPage2 extends StatefulWidget {
   const InscriptionPage2({super.key});
@@ -86,7 +86,7 @@ class _InscriptionPage2State extends State<InscriptionPage2> {
             child: Column(
               children: [
                 const Padding(
-                  padding: EdgeInsets.only(top: 15.0, bottom: 75.0),
+                  padding: EdgeInsets.only(top: 15.0, bottom: 5.0),
                   child: Text(
                     "Complètez votre profil",
                     style: TextStyle(
@@ -95,17 +95,28 @@ class _InscriptionPage2State extends State<InscriptionPage2> {
                     ),
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 30.0, right: 30.0),
-                  child: Text(
-                    "Veuillez renseigner quelques informations utiles à la création de votre dossier medical",
-                    style: TextStyle(
-                      fontSize: 15,
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 100,
+                const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Veuillez renseigner quelques informations utiles à la",
+                        style: TextStyle(
+                          fontSize: 15,
+                        ),
+                      ),
+                    ]),
+                const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "création de votre dossier medical",
+                        style: TextStyle(
+                          fontSize: 15,
+                        ),
+                      ),
+                    ]),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 10,
                 ),
                 const Padding(
                   padding: EdgeInsets.only(left: 20.0),
@@ -201,12 +212,12 @@ class _InscriptionPage2State extends State<InscriptionPage2> {
                     ))
                   ],
                 ),
-                const SizedBox(
-                  height: 182,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 8,
                 ),
                 MonElevatedButton(
                     backgroundColor: kColor,
-                    text: 'Suivant',
+                    text: 'Confirmer',
                     onPressed: () {
                       MaterialPageRoute newRoute = MaterialPageRoute(
                           builder: ((context) => const NavBarBottom()));

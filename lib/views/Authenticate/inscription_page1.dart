@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../constant.dart';
-import '../../monButton_connexion_social.dart';
-import '../../monElevatedButton.dart';
-import '../../monTextField.dart';
+import '../../controllers/constant.dart';
+import '../../controllers/monButton_connexion_social.dart';
+import '../../controllers/monElevatedButton.dart';
+import '../../controllers/monTextField.dart';
 import 'inscription_page2.dart';
 
 class InscriptionPage1 extends StatefulWidget {
@@ -79,7 +79,9 @@ class _InscriptionPage1State extends State<InscriptionPage1> {
             child: Column(
               children: [
                 const Padding(
-                  padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
+                  padding: EdgeInsets.only(
+                    top: 15.0,
+                  ),
                   child: Text(
                     "Création de compte",
                     style: TextStyle(
@@ -104,8 +106,8 @@ class _InscriptionPage1State extends State<InscriptionPage1> {
                   textColor: Colors.white,
                   colorBorder: kBgroundBlue,
                 ),
-                const SizedBox(
-                  height: 80,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 15,
                 ),
                 const Text(
                   "Ou",
@@ -180,8 +182,8 @@ class _InscriptionPage1State extends State<InscriptionPage1> {
                   ),
                   obobscureText: mot2PasseCachet,
                 ),
-                const SizedBox(
-                  height: 94,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 15,
                 ),
                 MonElevatedButton(
                     backgroundColor: kColor,
