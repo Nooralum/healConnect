@@ -78,17 +78,18 @@ class _InscriptionPage1State extends State<InscriptionPage1> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(
-                    top: 15.0,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 80,
+                ),
+                const Text(
+                  "Création de compte",
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
                   ),
-                  child: Text(
-                    "Création de compte",
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 20,
                 ),
                 BouttonConnexion(
                   text: 'Google',
@@ -107,7 +108,7 @@ class _InscriptionPage1State extends State<InscriptionPage1> {
                   colorBorder: kBgroundBlue,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height / 15,
+                  height: MediaQuery.of(context).size.height / 20,
                 ),
                 const Text(
                   "Ou",

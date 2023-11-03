@@ -85,15 +85,18 @@ class _InscriptionPage2State extends State<InscriptionPage2> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(top: 15.0, bottom: 5.0),
-                  child: Text(
-                    "Complètez votre profil",
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 30,
+                ),
+                const Text(
+                  "Complètez votre profil",
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
                   ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 30,
                 ),
                 const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -116,7 +119,7 @@ class _InscriptionPage2State extends State<InscriptionPage2> {
                       ),
                     ]),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height / 10,
+                  height: MediaQuery.of(context).size.height / 8,
                 ),
                 const Padding(
                   padding: EdgeInsets.only(left: 20.0),
@@ -213,7 +216,7 @@ class _InscriptionPage2State extends State<InscriptionPage2> {
                   ],
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height / 8,
+                  height: MediaQuery.of(context).size.height / 6,
                 ),
                 MonElevatedButton(
                     backgroundColor: kColor,
