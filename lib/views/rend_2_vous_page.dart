@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../controllers/constant.dart';
 import '../models/model_rendez_vous.dart';
@@ -14,10 +15,17 @@ class RendezVousPage extends StatefulWidget {
 class _RendezVousPageState extends State<RendezVousPage> {
   DateTime? _selectedDay;
   DateTime today = DateTime.now();
+  final Uri _url = Uri.parse('tel:+22556028692');
   void _onDaySelected(DateTime selectedday, DateTime focusDay) {
     setState(() {
       today = selectedday;
     });
+  }
+
+  Future<void> launchUrl1() async {
+    if (!await launchUrl(_url)) {
+      throw Exception('Could not launch $_url');
+    }
   }
 
   List<ModelRendezVous> liste = [
@@ -118,6 +126,14 @@ class _RendezVousPageState extends State<RendezVousPage> {
           fit: BoxFit.cover,
         ),
         backgroundColor: Colors.transparent,
+      ),
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Appeler un medcin',
+        backgroundColor: kColorCardListeRDV,
+        onPressed: () async {
+          await launchUrl1();
+        },
+        child: const Icon(Icons.phone),
       ),
       body: SizedBox(
         height: MediaQuery.of(context).size.height,
