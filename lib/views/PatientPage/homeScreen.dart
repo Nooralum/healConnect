@@ -11,7 +11,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-   
   @override
   Widget build(BuildContext context) {
     final double backHeight = 240;
@@ -55,84 +54,105 @@ class _HomeScreenState extends State<HomeScreen> {
                           width: 350,
                           height: 40,
                           decoration: BoxDecoration(
-                               borderRadius: BorderRadius.circular(20)
-                          ),
-                            child: TextField(
-                              decoration: InputDecoration(
-                                  label: const Text(
-                                    'recherche',
-                                   style: TextStyle(
-                                   fontStyle: FontStyle.italic,
+                              borderRadius: BorderRadius.circular(20)),
+                          child: TextField(
+                            decoration: InputDecoration(
+                              label: const Text(
+                                'recherche',
+                                style: TextStyle(
+                                    fontStyle: FontStyle.italic,
                                     color: noir,
-                                   fontSize: 20
-                                 ),
+                                    fontSize: 20),
                               ),
-                               suffixIcon: const Icon(
-                                  Icons.search,
-                                  color: noir,
-                                  size: 30,
-                                ),
-                           border: OutlineInputBorder(
-                             borderRadius: BorderRadius.circular(20),
+                              suffixIcon: const Icon(
+                                Icons.search,
+                                color: noir,
+                                size: 30,
                               ),
-                         ),
-                     ),
-               ),
-                    ],
-                         ),
-              ),
-              Positioned(
-                top: backHeight- 250/4,
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        HomeContains(
-                          img: Image.asset("assets/logos/rdv.png", width: 31, height: 31,), 
-                          myColor: const Color.fromARGB(255, 184, 251, 223), 
-                          txt: 'Prendre rendez-vous',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                            ),
                           ),
-                       const SizedBox(width: 5,),
-                        HomeContains(
-                           img: Image.asset("assets/logos/consult.png", width: 31, height: 31,), 
-                          myColor: const Color.fromARGB(255, 255, 203, 203), 
-                          txt: 'Faire consultation',
-                        ),
-                       const SizedBox(width: 5,),
-                        HomeContains(
-                           img: Image.asset("assets/logos/pharmacie.png", width: 31, height: 31,), 
-                           myColor: const Color.fromARGB(255, 131, 210, 255), 
-                           txt: 'Pharmacies',
                         ),
                       ],
                     ),
-                    const SizedBox(height: 10,),
-                    Row(
+                  ),
+                  Positioned(
+                    top: backHeight - 250 / 4,
+                    child: Column(
                       children: [
-                       HomeContains(
-                         img: Image.asset("assets/logos/add branch.png", width: 31, height: 31,), 
-                         myColor: const Color.fromARGB(255, 255, 203, 203), 
-                         txt: 'Ajouter membres',
+                        Row(
+                          children: [
+                            HomeContains(
+                              img: Image.asset(
+                                "assets/logos/rdv.png",
+                                width: 31,
+                                height: 31,
+                              ),
+                              myColor: const Color.fromARGB(255, 184, 251, 223),
+                              txt: 'Prendre rendez-vous',
+                            ),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            HomeContains(
+                              img: Image.asset(
+                                "assets/logos/consult.png",
+                                width: 31,
+                                height: 31,
+                              ),
+                              myColor: const Color.fromARGB(255, 255, 203, 203),
+                              txt: 'Faire consultation',
+                            ),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            HomeContains(
+                              img: Image.asset(
+                                "assets/logos/pharmacie.png",
+                                width: 31,
+                                height: 31,
+                              ),
+                              myColor: const Color.fromARGB(255, 131, 210, 255),
+                              txt: 'Pharmacies',
+                            ),
+                          ],
                         ),
-                        const SizedBox(width: 5,),
-                       HomeContains(
-                         img: Image.asset("assets/logos/rdv.png", width: 31, height: 31,), 
-                         myColor: const Color.fromARGB(255, 184, 251, 223), 
-                         txt: 'Prendre rendez-vous',
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: [
+                            HomeContains(
+                              img: Image.asset(
+                                "assets/logos/add branch.png",
+                                width: 31,
+                                height: 31,
+                              ),
+                              myColor: const Color.fromARGB(255, 255, 203, 203),
+                              txt: 'Ajouter membres',
+                            ),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            HomeContains(
+                              img: Image.asset(
+                                "assets/logos/rdv.png",
+                                width: 31,
+                                height: 31,
+                              ),
+                              myColor: const Color.fromARGB(255, 184, 251, 223),
+                              txt: 'Prendre rendez-vous',
+                            ),
+                          ],
                         ),
                       ],
                     ),
-                  ],
-                ),
-              )
-                     
-            
-             ]
-              
-                        ),
+                  )
+                ]),
           ],
         ),
-        
       ),
     );
   }
@@ -140,10 +160,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
 class HomeContains extends StatelessWidget {
   const HomeContains({
-    super.key, 
+    super.key,
     required this.img,
-     required this.myColor, 
-     required this.txt,
+    required this.myColor,
+    required this.txt,
   });
   final Image img;
   final Color myColor;
@@ -152,30 +172,27 @@ class HomeContains extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-     width: 120,
-     height: 120,
+      width: 120,
+      height: 120,
       child: ElevatedButton(
-       style: ElevatedButton.styleFrom(
-         backgroundColor: myColor,
-         minimumSize: Size(100, 100),
-         shape: RoundedRectangleBorder(
-           borderRadius: BorderRadius.circular(20)
-         )
-       ),
-       onPressed: (){}, 
-       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-         children: [
-           img,
-           Text(
-            txt, 
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 12, color: Colors.black),),
-         ],
-             
-       )
-       ),
+          style: ElevatedButton.styleFrom(
+              backgroundColor: myColor,
+              minimumSize: Size(100, 100),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20))),
+          onPressed: () {},
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              img,
+              Text(
+                txt,
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 12, color: Colors.black),
+              ),
+            ],
+          )),
     );
   }
 }
