@@ -95,7 +95,8 @@ class _MonCarnetAdoPageState extends State<MonCarnetAdoPage> {
                     borderRadius: BorderRadius.circular(15)),
                 child: Padding(
                   padding: const EdgeInsets.only(
-                      left: 20.0, right: 20.0, top: 10.0, bottom: 10.0),
+                      left: 20.0, right: 20.0, top: 5.0, 
+                      ),
                   child: MonCarnetColumn(
                     text1: "Nom",
                     text2: liste[0].nom,
@@ -134,7 +135,7 @@ class _MonCarnetAdoPageState extends State<MonCarnetAdoPage> {
                         child: Container(
                           width: size.width / 1.5,
                           decoration: BoxDecoration(
-                              color: const Color.fromARGB(34, 6, 153, 133),
+                              color: Color.fromARGB(255, 238, 253, 255),
                               border: Border.all(color: kColorCardListeRDV),
                               borderRadius: BorderRadius.circular(20)),
                           child: Padding(
@@ -226,7 +227,7 @@ class _MonCarnetAdoPageState extends State<MonCarnetAdoPage> {
                             width: size.width,
                             height: size.height / 10,
                             decoration: BoxDecoration(
-                                color: const Color.fromARGB(34, 6, 153, 133),
+                                color: Color.fromARGB(255, 239, 246, 240),
                                 border:
                                     Border.all(color: kBgroundBlue, width: 1.5),
                                 borderRadius: BorderRadius.circular(10)),

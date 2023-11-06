@@ -1,6 +1,7 @@
 import 'package:Healconnect/views/PatientPage/homeScreen.dart';
 import 'package:flutter/material.dart';
 
+import 'PatientPage/AccountPage.dart';
 import 'mon_carnet_ado.dart';
 import 'rend_2_vous_page.dart';
 
@@ -16,7 +17,12 @@ class _NavBarBottomState extends State<NavBarBottom> {
   int _selectedIndex = 0;
 
 //mettre les differentes pages ici
-  List tabs = const [HomeScreen(), MonCarnetAdoPage(), RendezVousPage()];
+  List tabs = const [
+    HomeScreen(), 
+    MonCarnetAdoPage(), 
+    RendezVousPage(),
+    AccountPage(),
+    ];
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +63,8 @@ class _NavBarBottomState extends State<NavBarBottom> {
                     icon: Icon(
                       Icons.book_sharp,
                     ),
-                    label: 'Carnet'),
+                    label: 'Carnet'
+                    ),
                 BottomNavigationBarItem(
                     icon: Icon(
                       Icons.calendar_month,
